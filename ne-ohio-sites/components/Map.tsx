@@ -6,7 +6,7 @@ export default function Map() {
   const [counties, setCounties] = useState(null)
 
   useEffect(() => {
-    fetch('/data/neo_counties.json')
+    fetch('/ne-ohio-counties.json')
       .then((res) => res.json())
       .then((data) => setCounties(data))
   }, [])
@@ -18,7 +18,7 @@ export default function Map() {
         attribution='&copy; OpenStreetMap contributors'
       />
       {counties && (
-        <GeoJSON data={counties} style={{ color: '#2563eb', weight: 2, fillOpacity: 0.05 }} />
+        <GeoJSON data={counties} style={{ color: '#2563eb', weight: 2, fillOpacity: 0.5 }} />
       )}
     </MapContainer>
   )
